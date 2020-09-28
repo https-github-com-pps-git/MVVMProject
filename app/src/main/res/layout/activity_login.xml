@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/mTopLayout"
+            layout="@layout/top_title_layout"/>
+
+        <!-- 用户名 -->
+        <View
+            android:id="@+id/usernameView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toTopOf="@id/passwordView"/>
+
+
+        <TextView
+            android:id="@+id/userNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/usernameView"
+            app:layout_constraintBottom_toBottomOf="@id/usernameView"
+           app:layout_constraintLeft_toLeftOf="@id/usernameView"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:textSize="16sp"
+            android:text="@string/username"/>
+
+        <EditText
+            android:id="@+id/userNameEdit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toRightOf="@id/userNameTv"
+            app:layout_constraintRight_toRightOf="@id/usernameView"
+            app:layout_constraintTop_toTopOf="@id/usernameView"
+            app:layout_constraintBottom_toBottomOf="@id/usernameView"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:hint="@string/input_username"/>
+
+
+        <!-- 密码 -->
+        <View
+            android:id="@+id/passwordView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_background"
+            app:layout_constraintTop_toBottomOf="@id/usernameView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/passwordTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/passwordView"
+            app:layout_constraintBottom_toBottomOf="@id/passwordView"
+            app:layout_constraintLeft_toLeftOf="@id/userNameTv"
+            app:layout_constraintRight_toRightOf="@id/userNameTv"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:textSize="16sp"
+            android:text="@string/password"/>
+
+        <EditText
+            android:id="@+id/passwordEdit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toRightOf="@id/passwordTv"
+            app:layout_constraintRight_toRightOf="@id/passwordView"
+            app:layout_constraintTop_toTopOf="@id/passwordView"
+            app:layout_constraintBottom_toBottomOf="@id/passwordView"
+            android:background="@null"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:hint="@string/input_password"/>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="@id/usernameView"
+            app:layout_constraintRight_toRightOf="@id/usernameView"
+            android:background="@drawable/button_background"
+            app:layout_constraintTop_toBottomOf="@id/passwordView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:text="@string/login"/>
+
+        <TextView
+            android:id="@+id/registerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/loginBtn"
+            app:layout_constraintRight_toRightOf="@id/loginBtn"
+            android:text="@string/not_account"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/default_color"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

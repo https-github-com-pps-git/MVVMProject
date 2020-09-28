@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mHome"
+        android:icon="@mipmap/home_ic"
+        android:title="@string/home"/>
+
+    <item android:id="@+id/mSearch"
+        android:icon="@mipmap/hot_search_ic"
+        android:title="@string/hot_search"/>
+
+    <item android:id="@+id/mSetup"
+        android:icon="@mipmap/setup_ic"
+        android:title="@string/setup"/>
+
+    <item android:id="@+id/mAccount"
+        android:icon="@mipmap/account_ic"
+        android:title="@string/official_account"/>
+
+    <item android:id="@+id/mMine"
+        android:icon="@mipmap/mine_ic"
+        android:title="@string/mine"/>
+
+
+</menu>
