@@ -2,6 +2,7 @@ package com.example.base.fragment
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,4 +45,6 @@ open abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
     protected open fun toast(msg: String){
         Toast.makeText(mContext,msg,Toast.LENGTH_LONG).show()
     }
+
+
 }

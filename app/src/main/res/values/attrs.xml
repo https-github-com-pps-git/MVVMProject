@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <declare-styleable name="FlowLayout">
+       <!-- 每个item水平反向的间距 -->
+       <attr name="horizontalWidth" format="dimension"/>
+       <attr name="verticalHeight" format="dimension"/>
+   </declare-styleable>
+    <declare-styleable name="TagView">
+        <!-- 文字的颜色是否是随机变化 -->
+        <attr name="textColorAutoChange" format="boolean"/>
+        <!-- 文字不随机变化的颜色 -->
+        <attr name="defaultColor" format="dimension"/>
+        <!-- 文字的大小 -->
+        <attr name="textSize" format="dimension"/>
+        <!-- 文字的内边距 -->
+        <attr name="textPadding" format="dimension"/>
+        <!-- 背景色 -->
+        <attr name="tagBackgroundColor" format="dimension"/>
+        <!-- 边框颜色 -->
+        <attr name="borderColor" format="color"/>
+        <!-- 背景色是否随机变化 -->
+        <attr name="backgroundColorAutoChange" format="color"/>
+        <!-- 边框的样式 -->
+        <attr name="borderStyle" format="enum">
+            <enum name="roundRect" value="0"/>
+            <enum name="rect" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

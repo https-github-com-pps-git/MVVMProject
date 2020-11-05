@@ -33,5 +33,12 @@ dependencies {
     implementation project(path: ':network')
     //Banner控件
     implementation 'com.to.aboomy:banner:3.0.6-x'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'//androidx版本
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'//androidx版本
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

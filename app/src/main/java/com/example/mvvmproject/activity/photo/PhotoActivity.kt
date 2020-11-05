@@ -26,8 +26,8 @@ class PhotoActivity : BaseMvvmActivity<ActivityPhotoBinding,PhotoViewModel>() {
         return R.layout.activity_photo
     }
 
-    override fun initMVVMData() {
-        super.initMVVMData()
+    override fun initData() {
+        super.initData()
 
         mViewModel?.getPhotoData()
 

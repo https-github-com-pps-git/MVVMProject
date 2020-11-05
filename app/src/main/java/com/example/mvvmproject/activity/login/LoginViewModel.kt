@@ -31,7 +31,7 @@ class LoginViewModel : BaseViewModel<User,LoginModel>() {
                 if (data.errorCode == 0){
                     var mUser =  User(data.data.username,data.data.password,data.data.id,data.data.token)
                     mDataBean.value = mUser
-                    setStateBean(Cont.ONCOMPLETE,null)
+                    setStateBean(Cont.ONCOMPLETE,"")
                 } else {
 
                     setStateBean(Cont.ONFAILED,data.errorMsg)

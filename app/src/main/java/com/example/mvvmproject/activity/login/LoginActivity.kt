@@ -25,8 +25,8 @@ class LoginActivity : BaseMvvmActivity<ActivityLoginBinding,LoginViewModel>() {
         return R.layout.activity_login
     }
 
-    override fun initMVVMData() {
-        super.initMVVMData()
+    override fun initData() {
+        super.initData()
         //初始化弹窗
         mStateDialog = StateDialog(mContext)
 

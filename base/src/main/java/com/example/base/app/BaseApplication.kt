@@ -1,6 +1,7 @@
 package com.example.base.app
 
 import android.app.Application
+import com.example.base.util.Density
 import com.kingja.loadsir.core.LoadSir
 
 open class BaseApplication : Application() {
@@ -13,5 +14,7 @@ open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         mInstance = this
+
+        Density.setDensity(this,(160f*2.2).toFloat())
     }
 }

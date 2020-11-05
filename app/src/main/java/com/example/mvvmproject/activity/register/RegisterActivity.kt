@@ -27,8 +27,8 @@ class RegisterActivity : BaseMvvmActivity<ActivityRegisterBinding, RegisterViewM
         return R.layout.activity_register
     }
 
-    override fun initMVVMData() {
-        super.initMVVMData()
+    override fun initData() {
+        super.initData()
 
         //初始化弹窗
         mStateDialog = StateDialog(mContext)

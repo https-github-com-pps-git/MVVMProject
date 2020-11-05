@@ -47,7 +47,7 @@ class RegisterViewModel : BaseViewModel<User, RegisterModel>() {
 
                     mDataBean.value = mUser
 
-                    setStateBean(Cont.ONCOMPLETE,null)
+                    setStateBean(Cont.ONCOMPLETE,"")
                 } else {
 
                     setStateBean(Cont.ONFAILED,data.errorMsg)

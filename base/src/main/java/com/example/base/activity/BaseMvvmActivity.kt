@@ -25,14 +25,11 @@ open abstract class BaseMvvmActivity<V : ViewDataBinding,VM : BaseViewModelListe
         lifecycle.addObserver(mViewModel!!)
 
         //获取MVVM的数据
-        initMVVMData()
+        initData()
 
     }
 
     protected abstract fun initViewModel(): VM
 
-    protected open fun initMVVMData(){
-
-    }
 
 }

@@ -1,15 +1,18 @@
 package com.example.mvvmproject.activity.home
 
-import androidx.appcompat.app.AppCompatActivity
+import android.Manifest
 import android.os.Bundle
+import android.os.Debug
+import android.os.Looper
+import android.os.MessageQueue
 import android.util.Log
 import android.view.View
-import androidx.core.view.forEach
-import androidx.core.view.get
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.blankj.utilcode.constant.PermissionConstants
+import com.blankj.utilcode.util.PermissionUtils
 import com.example.base.activity.BaseActivity
 import com.example.mvvmproject.R
 import com.example.mvvmproject.databinding.ActivityHomeBinding
@@ -25,6 +28,17 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         return R.layout.activity_home
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
+        super.onCreate(savedInstanceState)
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        //Debug.stopMethodTracing()
+    }
+
     override fun initData() {
         super.initData()
         //隐藏返回键
@@ -33,8 +47,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         //设置头部标题文字
         mDataBinding.mTopLayout.mTitleTv.text = resources.getString(R.string.home)
 
-        initFragment()
+        //申请权限
+        initPermissions()
 
+
+        initFragment()
+        mDataBinding.mViewpager.offscreenPageLimit = mFragments.size
         mDataBinding.mViewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(position: Int): Fragment {
                 return mFragments[position]
@@ -130,6 +148,32 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         setBottomLongEnabled(R.id.mHome, R.id.mSearch, R.id.mSetup, R.id.mAccount, R.id.mMine)
     }
 
+    private fun initPermissions() {
+
+        PermissionUtils.permission(PermissionConstants.STORAGE)
+            .callback(object : PermissionUtils.SingleCallback {
+                override fun callback(
+                    isAllGranted: Boolean,
+                    granted: MutableList<String>,
+                    deniedForever: MutableList<String>,
+                    denied: MutableList<String>
+                ) {
+                    Log.e("PPS", " $isAllGranted       ")
+                    granted.forEach {
+                        //这个是权限通过
+                        Log.e("PPS", "  granted  $it")
+                    }
+
+                    denied.forEach {
+                        //这个是权限未通过
+                        Log.e("PPS", "  denied  $it")
+                    }
+                }
+
+            }).request()
+
+    }
+
     private fun setBottomLongEnabled(vararg ids: Int) {
         // 遍历拦截 bottomnNavigatioonView 的长按吐司事件
         var menuView = mDataBinding.mBottomNavigation.getChildAt(0)//举个例子，第一个tab的拦截，其它的同理
@@ -149,5 +193,13 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         mFragments.add(SetUpFragment.getInstance())
         mFragments.add(AccountFragment.getInstance())
         mFragments.add(MineFragment.getInstance())
+
+        Looper.myQueue().addIdleHandler(object : MessageQueue.IdleHandler{
+            override fun queueIdle(): Boolean {
+                //在Handler空闲的时候执行
+                return true
+            }
+
+        })
     }
 }

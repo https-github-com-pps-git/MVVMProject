@@ -19,4 +19,8 @@
     <string name="setup">体系</string>
     <string name="official_account">公众号</string>
     <string name="mine">我的</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">搜你想搜</string>
+    <string name="search_all">大家都在搜</string>
+    <string name="common_web">常用网站</string>
 </resources>

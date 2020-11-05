@@ -1,5 +1,6 @@
 package com.example.network
 
+import android.util.Log
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -13,7 +14,7 @@ open class BaseNetWork {
     private lateinit var mUrl: String
     //定义一个MAP来缓存Retrofit
     private var mCacheRetrofit = HashMap<String,Retrofit>()
-    //Okhttp实；列
+    //Okhttp实列
     private var okHttpClient: OkHttpClient? = null
     protected constructor(url: String){
         this.mUrl = url
@@ -41,6 +42,7 @@ open class BaseNetWork {
                         //设置返回的适配器  用的是携程
                         .addCallAdapterFactory(CoroutineCallAdapterFactory())
                         .build()
+                    Log.e("PPS"," url = $mUrl" )
                 }
             }
 

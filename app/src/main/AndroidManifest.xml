@@ -3,6 +3,8 @@
     package="com.example.mvvmproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.MyApp"
@@ -12,18 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.home.HomeActivity">
+        <!-- webView 单独开一个进程 -->
+        <activity android:name=".activity.webview.WebViewActivity"
+            android:process=":webview"></activity>
+        <activity
+            android:name=".activity.home.HomeActivity"
+            android:theme="@style/launcherTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.login.LoginActivity">
-
-        </activity>
+        <activity android:name=".activity.login.LoginActivity"></activity>
         <activity android:name=".activity.register.RegisterActivity" />
-        <activity android:name=".activity.photo.PhotoActivity"></activity>
+        <activity android:name=".activity.photo.PhotoActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

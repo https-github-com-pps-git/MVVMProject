@@ -11,5 +11,8 @@ class Cont {
 
         //获取网络数据错误
         val ONFAILED = 3
+
+        //加载数据到底部了
+        val LOAD_DATA_END = 4
     }
 }

@@ -4,6 +4,7 @@ import com.example.base.model.BaseModel
 import com.example.base.model.IModelCallBack
 import com.example.mvvmproject.api.IAppApi
 import com.example.mvvmproject.api.AppApi
+import com.example.mvvmproject.constant.Constant
 import com.example.mvvmproject.entity.PhotoBean
 import kotlinx.coroutines.*
 import java.lang.Exception
@@ -12,7 +13,7 @@ class PhotoModel : BaseModel{
 
 
     constructor(){
-
+        AppApi.getInstance().setBaseUrl(Constant.PHOTO_BASE_URL)
     }
 
 

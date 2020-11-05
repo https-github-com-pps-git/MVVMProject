@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="dataBean"
+            type="com.example.mvvmproject.fragment.account.fragment.DataX" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintRight_toLeftOf="@id/mTitle"
+            app:layout_constraintHorizontal_weight="1"
+            imageUrl="@{dataBean.envelopePic}"
+            android:scaleType="centerCrop"
+            android:layout_margin="@dimen/dp_5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/mDate"/>
+
+        <TextView
+            android:id="@+id/mTitle"
+            app:layout_constraintLeft_toRightOf="@id/mIcon"
+            android:layout_width="0dp"
+            app:layout_constraintHorizontal_weight="3"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mIcon"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:maxLines="2"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:text="@{dataBean.title}"/>
+
+        <TextView
+            android:id="@+id/mContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/mTitle"
+            app:layout_constraintRight_toRightOf="@id/mTitle"
+            app:layout_constraintTop_toBottomOf="@id/mTitle"
+            android:maxLines="3"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@{dataBean.desc}"
+            android:textSize="@dimen/sp_14"
+            />
+
+        <TextView
+            android:id="@+id/mDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/mTitle"
+            app:layout_constraintTop_toBottomOf="@id/mContent"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@{String.valueOf(dataBean.publishTime)}"
+            />
+
+        <TextView
+            android:id="@+id/mAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/mDate"
+            app:layout_constraintTop_toTopOf="@id/mDate"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textSize="@dimen/sp_14"
+            android:text="@{dataBean.author}"/>
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@id/mDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/gary"
+            android:layout_marginTop="@dimen/dp_5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

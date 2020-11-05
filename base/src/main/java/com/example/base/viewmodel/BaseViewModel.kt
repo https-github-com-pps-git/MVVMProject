@@ -1,5 +1,6 @@
 package com.example.base.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.base.model.BaseModel
@@ -20,8 +21,10 @@ open abstract class BaseViewModel<T, M : BaseModel> : BaseViewModelListener, Vie
 
     //错误的回调
     var mFailedData: MutableLiveData<String> = MutableLiveData()
+
     //获取数据成功的回调
     var mDataBean: MutableLiveData<T> = MutableLiveData()
+
     //当前的状态的回调
     var mStateData: MutableLiveData<StateBean> = MutableLiveData()
 
@@ -35,9 +38,10 @@ open abstract class BaseViewModel<T, M : BaseModel> : BaseViewModelListener, Vie
     }
 
 
-    fun setStateBean(state: Int,mes: String?) {
+    fun setStateBean(state: Int,mes: String = "",isFirst: Boolean = true) {
         mStateBean.state = state
         mStateBean.message = mes
+        mStateBean.isFirst = isFirst
         mStateData.value = mStateBean
     }
 
@@ -61,9 +65,16 @@ open abstract class BaseViewModel<T, M : BaseModel> : BaseViewModelListener, Vie
      */
     override fun onLifeDestroy() {
         //在这里进行一些数据的销毁
+        Log.e("PPS","onLifeDestroy ")
         mModel?.cancel()
         mModel = null
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        Log.e("PPS","onCleared ")
+       /* mModel?.cancel()
+        mModel = null*/
+    }
 
 }

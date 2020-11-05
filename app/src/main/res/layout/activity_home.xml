@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.home.HomeActivity">
+        tools:context=".activity.home.HomeActivity"
+        android:background="@color/C_F5F5F5">
 
         <include
             android:id="@+id/mTopLayout"

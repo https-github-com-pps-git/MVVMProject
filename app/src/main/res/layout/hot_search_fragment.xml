@@ -1,13 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/mSearchEdit"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="40dp"
+                android:background="@drawable/hot_search_edit_back"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingRight="80dp"
+                android:paddingLeft="10dp"
+                android:hint="@string/search_hint"
+                />
+
+            <Button
+                android:id="@+id/mSearchBtn"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@+id/mSearchEdit"
+                app:layout_constraintRight_toRightOf="@+id/mSearchEdit"
+                android:background="@drawable/hot_search_btn_back"
+                />
+
+            <TextView
+                android:id="@+id/text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/mSearchEdit"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@string/search_all"/>
+
+            <com.example.mvvmproject.widget.FlowLayout
+                android:id="@+id/mFlowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_1"
+                android:layout_marginTop="20dp"
+                app:horizontalWidth="10dp"
+                android:padding="10dp"
+                app:verticalHeight="10dp"
+                android:background="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/mFlowLayout"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@string/common_web"/>
+
+            <com.example.mvvmproject.widget.FlowLayout
+                android:id="@+id/mFlowLayout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_2"
+                android:layout_marginTop="20dp"
+                app:horizontalWidth="10dp"
+                android:padding="10dp"
+                app:verticalHeight="10dp"
+                android:background="@color/white"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </layout>
