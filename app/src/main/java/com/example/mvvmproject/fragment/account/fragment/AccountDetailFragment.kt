@@ -3,6 +3,7 @@ package com.example.mvvmproject.fragment.account.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.base.constant.Const
@@ -13,14 +14,8 @@ import com.example.base.listener.IOnItemClickListener
 import com.example.mvvmproject.R
 import com.example.mvvmproject.activity.webview.WebViewActivity
 import com.example.mvvmproject.adapter.AccountDetailAdapter
-import com.example.mvvmproject.api.AppApi
-import com.example.mvvmproject.api.IAppApi
 import com.example.mvvmproject.databinding.AccountDetailFragmentBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.lang.Exception
-
+import com.example.mvvmproject.fragment.account.AccountFragment
 class AccountDetailFragment : BaseMvvmFragment<AccountDetailFragmentBinding,AccountDetailViewModel>() {
     companion object {
         fun getInstance(id: Int): AccountDetailFragment {

@@ -46,9 +46,11 @@ class HotSearchFragment : BaseMvvmFragment<HotSearchFragmentBinding, HotSearchVi
             mCommonWebName.clear()
             mSearchAllName.clear()
             mSearchAllBean.data.forEach {
+                Log.e("PPS","${it.id} link ==1>  ${it.link}")
                 mSearchAllName.add(it.name)
             }
             mCommonWebBean.data.forEach {
+                Log.e("PPS","${it.id} link ==2>  ${it.link}")
                 mCommonWebName.add(it.name)
             }
             mDataBinding.mFlowLayout2.setViews(mCommonWebName)

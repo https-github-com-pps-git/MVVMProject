@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                android:textSize="18sp"
+                android:textSize="@dimen/sp_16"
                 android:textColor="@color/black"
                 android:text="@{data.title}"/>
 
@@ -48,7 +48,7 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:background="@drawable/home_adapter_text_back"
                 android:text="@{data.superChapterName}"/>
 
@@ -65,7 +65,7 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:background="@drawable/home_adapter_text_back"
                 android:visibility="@{TextUtils.isEmpty(data.shareUser) ? View.GONE : View.VISIBLE }"
                 android:text="@{data.shareUser}"/>
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{data.niceShareDate}"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textColor="@color/gary"
                 android:maxLines="1"
                 android:gravity="right"

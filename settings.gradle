@@ -1,3 +1,4 @@
+include ':profilemodule'
 include ':network'
 include ':base'
 include ':app'

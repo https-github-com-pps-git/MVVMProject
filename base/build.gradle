@@ -31,7 +31,8 @@ dependencies {
     api 'androidx.constraintlayout:constraintlayout:2.0.1'
     api 'junit:junit:4.12'
 
-
+    api 'androidx.test.ext:junit:1.1.2'
+    api 'androidx.test.espresso:espresso-core:3.3.0'
 
     //Lottie是Airbnb开源的一个支持 Android、iOS 以及 ReactNative，利用json文件的方式快速实现动画效果的库
     api 'com.airbnb.android:lottie:2.8.0'

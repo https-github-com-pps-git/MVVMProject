@@ -31,7 +31,8 @@
             android:background="@color/white"
             app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/home_bottom_navigation" />
+            app:menu="@menu/home_bottom_navigation"
+            tools:layout_editor_absoluteX="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

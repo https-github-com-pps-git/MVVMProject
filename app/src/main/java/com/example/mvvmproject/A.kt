@@ -38,16 +38,16 @@ fun main(args: Array<String>) {
 }
 
 
-suspend fun loginA(): Int{
+suspend fun loginA(){
     delay(3000)
     System.out.println("A登陆完成  ${System.currentTimeMillis()}")
-    return 2
+
 }
 
-suspend fun loginB(): Int{
+suspend fun loginB(){
     delay(4000)
     System.out.println("B开始执行第二个方法")
     delay(2000)
     System.out.println("B登陆完成  ${System.currentTimeMillis()}")
-    return 5
+
 }

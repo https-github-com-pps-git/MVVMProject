@@ -15,6 +15,8 @@ open class BaseApplication : Application() {
         super.onCreate()
         mInstance = this
 
-        Density.setDensity(this,(160f*2.2).toFloat())
+        //将美工给的设计图的宽度的dp设置上去就好了
+
+        Density.setDensity(this,(380f).toFloat())
     }
 }

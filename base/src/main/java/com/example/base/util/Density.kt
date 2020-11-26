@@ -16,7 +16,6 @@ import androidx.annotation.Nullable
  */
 class Density {
 
-
     companion object {
         private var appDensity = 0f
         private var appScaledDensity = 0f

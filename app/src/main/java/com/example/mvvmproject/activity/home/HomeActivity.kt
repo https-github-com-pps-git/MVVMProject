@@ -14,6 +14,7 @@ import androidx.viewpager.widget.ViewPager
 import com.blankj.utilcode.constant.PermissionConstants
 import com.blankj.utilcode.util.PermissionUtils
 import com.example.base.activity.BaseActivity
+import com.example.mvvmproject.BuildConfig
 import com.example.mvvmproject.R
 import com.example.mvvmproject.databinding.ActivityHomeBinding
 import com.example.mvvmproject.fragment.account.AccountFragment
@@ -21,6 +22,9 @@ import com.example.mvvmproject.fragment.home.HomeFragment
 import com.example.mvvmproject.fragment.mine.MineFragment
 import com.example.mvvmproject.fragment.search.HotSearchFragment
 import com.example.mvvmproject.fragment.setup.SetUpFragment
+import java.io.File
+import java.io.FileOutputStream
+import java.lang.Exception
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     private var mFragments = mutableListOf<Fragment>()
@@ -36,7 +40,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        //Debug.stopMethodTracing()
+        if (BuildConfig.DEBUG) {
+            Debug.stopMethodTracing()
+        }
     }
 
     override fun initData() {
@@ -50,6 +56,19 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         //申请权限
         initPermissions()
 
+        //Thread.sleep(5000)
+
+        var fos:FileOutputStream? = null
+        try {
+            var file = File("/storage/sdcard0/test.txt")
+            fos = FileOutputStream(file)
+            fos.write(1)
+            fos.flush()
+        }catch (e : Exception){
+
+        }finally {
+            fos?.close()
+        }
 
         initFragment()
         mDataBinding.mViewpager.offscreenPageLimit = mFragments.size
